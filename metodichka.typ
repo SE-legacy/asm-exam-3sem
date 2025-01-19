@@ -12,7 +12,7 @@
 		pagebreak()
 		it
 	}
-	let first = 1
+	let first = 0
 	let last = 42
 	for ticketid in range(first, last + 1) {
 		let ticketname = str(ticketid) + ".typ"
@@ -22,7 +22,7 @@
 		counter(heading).update((..nums) => {
 			let arr = nums.pos()
 			if arr.len() > tickets_offset {
-				arr.at(tickets_offset) = ticketid - 1
+				arr.at(tickets_offset) = ticketid
 			}
 			return arr
 		})

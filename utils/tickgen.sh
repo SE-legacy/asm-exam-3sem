@@ -8,7 +8,7 @@ while read -r TICKET; do
 	if [ $i -lt 10 ]; then
 		fname=0$i
 	fi
-	echo "== $TICKET" >tickets/$fname.typ
+	echo "= $TICKET" >tickets/$fname.typ
 	curl 'https://github.com/_graphql' \
 		-H 'accept: application/json' \
 		-H 'accept-language: en,ru;q=0.9' \
