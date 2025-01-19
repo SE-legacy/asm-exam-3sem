@@ -22,7 +22,7 @@
 		counter(heading).update((..nums) => {
 			let arr = nums.pos()
 			if arr.len() > tickets_offset {
-				arr.at(tickets_offset) = ticketid - 1
+				arr.at(tickets_offset) = ticketid
 			}
 			return arr
 		})
