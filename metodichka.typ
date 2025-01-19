@@ -12,7 +12,7 @@
 		pagebreak()
 		it
 	}
-	let first = 1
+	let first = 0
 	let last = 42
 	for ticketid in range(first, last + 1) {
 		let ticketname = str(ticketid) + ".typ"
