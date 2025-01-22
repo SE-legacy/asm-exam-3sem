@@ -14,7 +14,7 @@
       mov DS, AX    ; DS = @data
       push DS
       pop ES        ; ES = DS
-      cld           ; DF = 1
+      cld           ; DF = 0
       lea DI, S + 1 ; DI = (offset S) + 1
       xor CH, CH
       mov CL, S     ; длину строки в CX
