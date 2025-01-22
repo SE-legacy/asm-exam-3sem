@@ -39,6 +39,8 @@
 	set align(left)
 	text("Данила Григорьев" + "\n")
 	text("Смирнов Егор" + "\n")
+	text("Александр Храмов" + "\n")
+	text("Чертков Михаил" + "\n")
 	v(1fr)
 	set align(center)
 	text("г. Саратов" + " " + str(datetime.today().year()))
