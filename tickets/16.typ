@@ -4,13 +4,13 @@
 
 В Ассемблере, если в результате получается более _k_ разрядов, то _(k + 1)_-й пересылается в флаг CF.
 
-  $ X + Y = (X + Y ) m o d 2^ k = X + Y space и space C F = 0, е с л и space X + Y < 2^ k $
+  $ X + Y = (X + Y ) m o d 2^ k = X + Y space и space C F = 0, е с л и space X + Y < 2^k $
 
-  $ X + Y = (X + Y ) m o d 2^ k = X + Y − 2^ k space и space C F = 1, е с л и space X + Y ≥ 2 $
+  $ X + Y = (X + Y ) m o d 2^ k = X + Y − 2^ k space и space C F = 1, е с л и space X + Y ≥ 2^k $
 
 
 Пример (для байтов):
-  $ 250 + 10 = 260 = 100000100_2, и р е з у л ь т а т: 00000100_2 = 4, C F = 1 $
+  $ 250 + 10 = 260 = 100000100_2, space и space р е з у л ь т а т: 00000100_2 = 4, C F = 1 $
 
   $ X − Y = (X − Y ) m o d 2 ^k = X − Y space и space C F = 0, е с л и space X ≥ Y $
 
