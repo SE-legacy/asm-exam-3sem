@@ -109,15 +109,16 @@ lea BX, dt1
 mov [BX].d, 10
 ```
 
-Полезный оператор *type* разрешается в размер переменной: 
+Полезный оператор *type* возвращает размер типа данных в байтах:
 
 #align(center)[
-  ```asm
   type Date = type dt1 = 4
+
   type dt1.m = type m = 1
+
   type (dts[SI]).m = type (dts[SI].m) = 1
+
   type dts[SI].m = type dts = 4
-  ```
 ]
 
 Пример обращения к полям структуры:
