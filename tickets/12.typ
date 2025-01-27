@@ -13,15 +13,16 @@ COM-файл обязательно должен иметь модель пам�
 .model tiny
 .code
 org 100h
-  jmp start
-  Str1 db 'Hello', '$'
 start:
-  mov AH, 09h
-  lea DX, Str1
-  int 21h
-
-  mov AX, 4C00h
-  int 21h
+    mov AH, 09h
+    lea DX, Str1
+    int 21h
+    mov AX, 4C00h
+    int 21h
+;==========================
+;       data
+;==========================
+    Str1 db 'Hello', '$'
 end start
 ```
 Аналогичная EXE-программа, модель small:
