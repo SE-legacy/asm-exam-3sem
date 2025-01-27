@@ -13,7 +13,7 @@ BIOS позволяет выводить текстовую информацию
 
 #set table.cell(align: center + horizon)
 #let ceil = (span: 1, rot: 90deg, cont) => {
-	return table.cell(colspan: span, rotate(rot, reflow: true, cont))
+	return table.cell(colspan: span, rotate(reflow: true, cont))
 }
 #table(
 	columns: 16,
