@@ -35,4 +35,4 @@
  
 Пример такой передачи данных: функция DOS, находящая первый файл, удовлетворяющий ASCIIZ-спецификации (int 21h, AH = 4Eh). Эта функция возвращает блок DTA, если файл был найден
 
-https://stanislavs.org/helppc/dta.html
+#link("https://stanislavs.org/helppc/dta.html")
