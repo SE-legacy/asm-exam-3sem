@@ -1,8 +1,8 @@
 = Процессор с точки зрения программиста, регистры общего назначения, регистр флагов
 
-Совокупность программно доступных средств процессора называется *архитектурой процессора*, с точки зрения программиста.
+C точки зрения программиста *архитектура процессора* --- это совокупность его программно доступных средств.
 
-*Регистр* --- набор из n устройств (*триггеров*) способный поразрядно хранить двоичное число.
+*Регистр* --- набор из $n$ устройств (*триггеров*) способный поразрядно хранить двоичное число.
 
 Начиная с i386 процессора программисту доступны 16 *основных регистров*, 11 *регистров для работы с сопроцессором и мультимедийными приложениями*, и в реальном режиме доступны некоторые регистры управления и некоторые специальные регистры.
 
@@ -25,75 +25,29 @@
 
 Регистр *флагов* FLAGS (EFLAGS) определяет состояние процессора и программы в каждый момент времени:
 
-#set table.hline(stroke: .6pt)
 #table(
+  stroke: 0.6pt,
   columns: 22,
-  stroke: none,
   inset: 10pt,
   align: center,
-  table.hline(),
   table.header(
     [31],
     [...],
-    [19],
-    [18],
-    [17],
-    [16],
-    [15],
-    [14],
-    [13],
-    [12],
-    [11],
-    [10],
-    [9],
-    [8],
-    [7],
-    [6],
-    [5],
-    [4],
-    [3],
-    [2],
-    [1],
-    [0],
+    ..range(19, -1, step: -1).map(i => [#i]),
   ),
-  table.hline(),
-  table.vline(x: 0),
-  table.vline(x: 1),
-  table.vline(x: 2),
-  table.vline(x: 3),
-  table.vline(x: 4),
-  table.vline(x: 5),
-  table.vline(x: 6),
-  table.vline(x: 7),
-  table.vline(x: 8),
-  table.vline(x: 9),
-  table.vline(x: 10),
-  table.vline(x: 11),
-  table.vline(x: 12),
-  table.vline(x: 13),
-  table.vline(x: 14),
-  table.vline(x: 15),
-  table.vline(x: 16),
-  table.vline(x: 17),
-  table.vline(x: 18),
-  table.vline(x: 19),
-  table.vline(x: 20),
-  table.vline(x: 21),
-  table.vline(x: 22),
 
-  table.cell(fill: rgb("#acacac"))[],
-  table.cell(fill: rgb("#acacac"))[],
-  table.cell(fill: rgb("#acacac"))[],
+  table.cell(fill: gray)[],
+  table.cell(fill: gray)[],
+  table.cell(fill: gray)[],
   [AC], [VM], [RF],
-  table.cell(fill: rgb("#acacac"))[],
-  [NF], [IO], [PL], [OF], [DF], [IF], [TF], [SF], [ZF],
-  table.cell(fill: rgb("#acacac"))[],
+  table.cell(fill: gray)[],
+  [NT], [IO], [PL], [OF], [DF], [IF], [TF], [SF], [ZF],
+  table.cell(fill: gray)[],
   [AF],
-  table.cell(fill: rgb("#acacac"))[],
+  table.cell(fill: gray)[],
   [PF],
-  table.cell(fill: rgb("#acacac"))[],
+  table.cell(fill: gray)[],
   [CF],
-  table.hline(),
 )
 
 - CF --- флаг переноса (беззнаковое переполнение); устанавливается в  1, если производится перенос за разрядную сетку при сложении или заем для старшего разряда при вычитании. Пример для 4-битных регистров:
