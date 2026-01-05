@@ -1,4 +1,7 @@
 #import "functions.typ": lets
+
+#set text(lang: "ru")
+
 #let load_tickets = () => {
 	let tickets_offset = 1
 	set heading(numbering: (..nums) => {
