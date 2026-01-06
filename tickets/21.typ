@@ -29,8 +29,8 @@ Date struc
 Date ends
 ```
 
-#align(center)[
-  #image("../images/img22_1.png", width: 70%)
+#figure(caption: "")[
+  #image("../images/img22_1.png", width: 60%)
 ]
 
 Использование структуры:

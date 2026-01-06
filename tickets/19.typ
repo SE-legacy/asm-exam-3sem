@@ -20,34 +20,19 @@
 
 Существует также команда *test*, которая выполнит побитовое *and* над операндами и установит флаги в нужные значения (более предпочтительна при проверке чисел на равенство).
 
-#set table.hline(stroke: .6pt)
 #table(
   columns: 3, 
-  stroke: none,
   inset: 10pt,
   align: center,
-  table.hline(),
   table.header(
     [*Условие*], [*Для беззнаковых чисел*], [*Для знаковых чисел*],
-
   ),
-  table.hline(),
-  table.vline(x: 0),
-  table.vline(x: 1),
-  table.vline(x: 2),
-  table.vline(x: 3),
   [>], [JA], [JG],
-  table.hline(),
   [=], [JE], [JE],
-  table.hline(),
   [\<], [JB], [JL],
-  table.hline(),
   [>=], [JAE], [JGE],
-  table.hline(),
   [\<=], [JBE], [JLE],
-  table.hline(),
   [\<> или !=], [JNE], [JNE],
-  table.hline(),
 )
 
 В принципе, по этой теме это все, что есть в презентации. Если кому-то захочется, можно еще попытаться разобраться в этом.
