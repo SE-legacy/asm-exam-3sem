@@ -1,20 +1,16 @@
-#import "functions.typ": lets
-
 #set text(lang: "ru")
 
 #let load_tickets = () => {
-  let tickets_offset = 1
   set heading(
-    numbering: (..nums) => {
-      let number = nums.pos().map(str).slice(1).join(".")
-      if nums.pos().len() == tickets_offset + 1 {
-        "Вопрос " + number + "."
+    numbering: (first, ..other) => {
+      if other.pos().len() == 0 {
+        "Вопрос " + str(first) + "."
       }
     },
-    supplement: [Вопрос],
-    offset: tickets_offset,
+    hanging-indent: 0pt,
+    supplement: none,
   )
-  show heading.where(level: tickets_offset + 1): it => {
+  show heading.where(level: 1): it => {
     pagebreak()
     it
   }
@@ -25,13 +21,6 @@
     while ticketname.len() < str(last).len() + ".typ".len() {
       ticketname = "0" + ticketname
     }
-    counter(heading).update((..nums) => {
-      let arr = nums.pos()
-      if arr.len() > tickets_offset {
-        arr.at(tickets_offset) = ticketid
-      }
-      return arr
-    })
     include "tickets/" + ticketname
   }
 }
@@ -49,9 +38,10 @@
   text("Григорьев Данила" + "\n")
   text("Соловьев Артем" + "\n")
   text("Толстов Роберт" + "\n")
+  text("Леонтьев Михаил" + "\n")
   v(1fr)
   set align(center)
-  text("г. Саратов" + " " + str(datetime.today().year()))
+  text("г. Саратов " + str(datetime.today().year()))
   pagebreak()
 }
 
@@ -59,6 +49,6 @@
 
 #set page(numbering: "1")
 
-#outline(title: "Программа экзамена", target: heading.where(level: 2, supplement: [Вопрос]))
+#outline(title: "Программа экзамена", target: heading.where(level: 1))
 
 #load_tickets()
