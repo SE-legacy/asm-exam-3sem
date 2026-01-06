@@ -29,7 +29,7 @@ Date struc
 Date ends
 ```
 
-#figure(caption: "")[
+#figure()[
   #image("../images/img22_1.png", width: 60%)
 ]
 

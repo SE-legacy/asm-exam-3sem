@@ -1,6 +1,6 @@
 = Передача параметров через стек, пример
 
-#figure(caption: "")[
+#figure()[
   #image("../images/img26_1.png", width: 80%)
 ]
 
@@ -22,7 +22,7 @@ Func proc near
 Func endp
 ```
 
-#figure(caption: "")[
+#figure()[
   #image("../images/img26_2.png", width: 80%)
 ]
 

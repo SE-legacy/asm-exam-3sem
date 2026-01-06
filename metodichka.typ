@@ -1,5 +1,6 @@
 #set text(lang: "ru")
 #set table(stroke: 0.6pt)
+#set figure(caption: "")
 
 #let load_tickets = () => {
   set heading(
