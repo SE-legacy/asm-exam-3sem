@@ -3,24 +3,32 @@
 К командам перессылки также относятся:
 
 - Команды обмена:
-  ```asm
-  xchg R, R/M
-  ```
+  #align(center)[
+    ```asm
+    xchg R, R/M
+    ```
+  ]
 - Команды перестановки байт (i386 и новее):
-  ```asm
-  bswap R32
-  ```
+  #align(center)[
+    ```asm
+    bswap R32
+    ```
+  ]
 - Команды конвертирования (безадресные):
   - `cbw` (AL #sym.arrow AX),
   - `cwd` (AX #sym.arrow DX:AX),
   - `cwde` (AX #sym.arrow EAX),
   - `cdq` (EAX #sym.arrow EDX:EAX);
 - Команды условной пересылки:
-  ```asm
-  cmovXX R, R/M
-  ```
+  #align(center)[
+    ```asm
+    cmovXX R, R/M
+    ```
+  ]
   где `XX` --- операция сравнения. Если условие верно --- переслать.
 - Загрузка адреса
-  ```asm
-  lea R, M ;вычислить адрес M и сохранить его в регистре R.
-  ```
+  #align(center)[
+    ```asm
+    lea R, M ;вычислить адрес M и сохранить его в регистре R.
+    ```
+  ]
