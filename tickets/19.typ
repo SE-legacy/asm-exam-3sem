@@ -43,8 +43,8 @@
   [op1 $<$ op2], [$"CF" = 1$], [`jb` #h(1fr) `jnae`], [$"OF" != "SF"$], [`jl` #h(1fr) `jnge`],
   [op1 $>=$ op2], [$"CF" = 0$], [`jae` #h(1fr) `jnb`], [$"OF" = "SF"$], [`jge` #h(1fr) `jnl`],
   [op1 $<=$ op2], [$"CF" = 1 or "ZF" = 1$], [`jbe` #h(1fr) `jna`], [$"ZF" = 1 or "OF" != "SF"$], [`jle` #h(1fr) `jng`],
-  [op1 $=$ op2], [$"ZF" = 1$], [`je`], [$"ZF" = 1$], [`je`],
-  [op1 $!=$ op2], [$"ZF" = 0$], [`jne`], [$"ZF" = 0$], [`jne`],
+  [op1 $=$ op2], [$"ZF" = 1$], [`je` #h(1fr) `jz`], [$"ZF" = 1$], [`je` #h(1fr) `jz`],
+  [op1 $!=$ op2], [$"ZF" = 0$], [`jne` #h(1fr) `jnz`], [$"ZF" = 0$], [`jne` #h(1fr) `jnz`],
 )
 
 Команда
