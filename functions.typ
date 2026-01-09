@@ -106,8 +106,10 @@
   }
 
   [*#name --- #code_str*]
-  [
-    / При вызове: #list(..input_array)
-    / Возврат: #linebreak() #output
-  ]
+  [/ При вызове: #list(..input_array)]
+  if (output != []) {
+    [/ Возврат: #linebreak() #output]
+  } else {
+    [/ Возврат: #linebreak() Нет.]
+  }
 }
