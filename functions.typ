@@ -89,17 +89,25 @@
 /// - add_ah (bool): Если `true`, добавить первой строкой в действия при вызове строку с установкой регистра AH
 /// -> content
 #let int_XXh(name, code, add_ah: true, input, output) = context {
+  set terms(separator: ": ", hanging-indent: 1em)
+
   let code_str = upper(str(code, base: 16)) + "h"
+  if (code_str.len() < 3) {
+    code_str = "0" + code_str
+  }
+
   let input_array = split-paragraphs(input)
   if (add_ah) {
-    input_array.insert(0, [AH $<-$ #code_str])
+    if (input_array.len() == 0) {
+      input_array.insert(0, [AH $<-$ #code_str.])
+    } else {
+      input_array.insert(0, [AH $<-$ #code_str\;])
+    }
   }
 
   [*#name --- #code_str*]
-  linebreak()
-  [*При вызове*:]
-  list(..input_array)
-  [*Возврат*:]
-  linebreak()
-  output
+  [
+    / При вызове: #list(..input_array)
+    / Возврат: #linebreak() #output
+  ]
 }
