@@ -1,5 +1,6 @@
 #set text(lang: "ru")
 #set table(stroke: 0.6pt)
+#show link: el => text(fill: blue, underline(el))
 
 #let load_tickets = () => {
   set heading(
