@@ -14,10 +14,10 @@
     ```
   ]
 - Команды конвертирования (безадресные):
-  - `cbw` (AL $->$ AX),
-  - `cwd` (AX $->$  DX:AX),
-  - `cwde` (AX $->$  EAX),
-  - `cdq` (EAX $->$  EDX:EAX);
+  - ```asm cbw``` (AL $->$ AX),
+  - ```asm cwd``` (AX $->$  DX:AX),
+  - ```asm cwde``` (AX $->$  EAX),
+  - ```asm cdq``` (EAX $->$  EDX:EAX);
 - Команды условной пересылки:
   #align(center)[
     ```asm
