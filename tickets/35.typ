@@ -1,32 +1,30 @@
-= Логические выражения в директивах условной генерации.
+= Логические выражения в директивах условной генерации
 
-```asm
-; Макрос, выполняющий сдвиг байтового значения
-; x на n бит вправо, если 0 < n < 8.
-RShiftByte macro x, n
-    if (n gt 0) and (n lt 8)
-        mov CL, n
-        shr x, CL
-    elseif n ge 8
-        mov x, byte ptr 0
-    endif
-endm
-```
+- Макрос, выполняющий сдвиг байтового значения `x` на $n$ бит вправо, если $0 < n < 8$:
 
-```asm
-; Макрос вычисляет минимум или максимум из двух величин
-; помещает результат в R1. Имя операции передается в T.
-Max_Min macro R1, R2, T
+  ```asm
+  RShiftByte macro x, n
+      if (n gt 0) and (n lt 8)
+          mov CL, n
+          shr x, CL
+      elseif n ge 8
+          mov x, byte ptr 0
+      endif
+  endm
+  ```
+- Поиск $max$ или $min$ из двух знаковых величин, хранящихся в байтовых регистрах, операция передается в `T`, результат помещается в `R1`:
+
+  ```asm
+  Max_Min macro R1, R2, T
       local L
-      ifdifi <R1>, <R2>     ; R1 и R2 --- разные регистры
+      ifdif <R1>, <R2>
           cmp R1, R2
-          ifidni <T>, <max> ; T == max
+          ifidni <T>, <max>
               jge L
           else
               jle L
           endif
-L:
-          mov R1, R2
-      endif
-endm
-```
+          mov R1,R2
+      L: endif
+  endm
+  ```
