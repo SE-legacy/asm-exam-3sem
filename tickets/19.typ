@@ -31,7 +31,7 @@
 
 #table(
   columns: (auto, auto, 6em, auto, 6em),
-  align: center,
+  align: center + horizon,
   table.header(
     table.cell(rowspan: 2)[*Условие*],
     table.cell(colspan: 2)[*Беззнаковые*],
