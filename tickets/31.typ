@@ -69,6 +69,18 @@
   ; add AX, 7
   ; add AX, 5
   ; add AX, p
+
+  irpc num, <1, 2, 3>
+    db '&num'
+  endm
+
+  ; db '1'
+  ; db ','
+  ; db ' '
+  ; db '2'
+  ; db ','
+  ; db ' '
+  ; db '3'
   ```
 
 == Макрооператоры
