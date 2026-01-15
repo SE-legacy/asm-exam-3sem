@@ -41,6 +41,7 @@
   text("Соловьев Артем" + "\n")
   text("Толстов Роберт" + "\n")
   text("Леонтьев Михаил" + "\n")
+  text("Архипов Иван" + "\n")
   v(1fr)
   set align(center)
   text("г. Саратов " + str(datetime.today().year()))
